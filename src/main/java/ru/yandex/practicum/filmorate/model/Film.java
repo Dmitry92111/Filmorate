@@ -1,9 +1,6 @@
 package ru.yandex.practicum.filmorate.model;
 
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.Past;
-import jakarta.validation.constraints.Positive;
-import jakarta.validation.constraints.Size;
+import jakarta.validation.constraints.*;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
@@ -23,7 +20,6 @@ public class Film {
     @Size(max = 200, message = FILM_DESCRIPTION_CANNOT_CONTAIN_MORE_THAT_200_CHARS)
     private String description;
 
-    @Past(message = FILM_RELEASE_DATE_IS_IN_THE_FUTURE)
     private LocalDate releaseDate;
 
     @Positive(message = FILM_DURATION_CANNOT_BE_NEGATIVE_NUMBER)

@@ -8,7 +8,6 @@ import ru.yandex.practicum.filmorate.exception.NotFoundException;
 import ru.yandex.practicum.filmorate.model.Film;
 import ru.yandex.practicum.filmorate.model.User;
 import ru.yandex.practicum.filmorate.storage.film.FilmStorage;
-import ru.yandex.practicum.filmorate.storage.film.InMemoryFilmStorage;
 
 import java.util.Collection;
 import java.util.Comparator;
@@ -22,7 +21,7 @@ public class FilmService {
     private final UserService userService;
     private final Comparator<Film> amountOfLikesComparator = Comparator.comparingInt(film -> film.getLikedUsersIds().size());
 
-    public FilmService(InMemoryFilmStorage filmStorage, UserService userService) {
+    public FilmService(FilmStorage filmStorage, UserService userService) {
         this.filmStorage = filmStorage;
         this.userService = userService;
     }

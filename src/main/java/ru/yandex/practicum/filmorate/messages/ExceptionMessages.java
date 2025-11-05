@@ -13,7 +13,6 @@ public class ExceptionMessages {
     public static final String INCORRECT_EMAIL = "Указан E-mail в некорректном формате";
     public static final String INCORRECT_LOGIN_CONTAINS_SPACES = "Login не может содержать пробелы";
     public static final String USER_CANNOT_BE_NULL = "Пользователь не может быть null";
-    public static final String FILM_RELEASE_DATE_IS_IN_THE_FUTURE = "Дата рождения не может быть в будущем";
     public static final String BLANK_OR_NULL_FILM_NAME = "Название фильма не может быть пустым";
     public static final String FILM_DESCRIPTION_CANNOT_CONTAIN_MORE_THAT_200_CHARS
             = "Описание фильма не может содержать более 200 символов";
