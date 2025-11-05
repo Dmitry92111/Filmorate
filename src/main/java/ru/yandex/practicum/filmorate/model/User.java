@@ -9,6 +9,8 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 
 import java.time.LocalDate;
+import java.util.HashSet;
+import java.util.Set;
 
 import static ru.yandex.practicum.filmorate.messages.ExceptionMessages.*;
 
@@ -18,7 +20,7 @@ public class User {
     private Long id;
 
     @NotBlank(message = BLANK_OR_NULL_LOGIN)
-    private final String login;
+    private String login;
 
     @NotBlank(message = BLANK_OR_NULL_EMAIL)
     @Email(message = INCORRECT_EMAIL)
@@ -28,6 +30,8 @@ public class User {
 
     @Past(message = USER_BIRTHDAY_IS_IN_THE_FUTURE)
     private LocalDate birthday;
+
+    private final Set<Long> friendsIds;
 
     @JsonCreator
     public User(
@@ -40,5 +44,6 @@ public class User {
         this.email = email;
         this.name = name;
         this.birthday = birthday;
+        friendsIds = new HashSet<>();
     }
 }

@@ -8,7 +8,8 @@ public class ExceptionMessages {
     public static final String USER_BIRTHDAY_IS_BEFORE_MIN_DATE = "Дата рождения не может быть ранее 01.01.1900";
     public static final String USER_BIRTHDAY_IS_IN_THE_FUTURE = "Дата рождения не может быть в будущем";
     public static final String ID_CANNOT_BE_NULL = "Id должен быть указан";
-    public static final String ID_NOT_FOUND = "Пользователь с указанным id не найден";
+    public static final String USER_BY_ID_NOT_FOUND = "Пользователь с указанным id не найден";
+    public static final String FILM_BY_ID_NOT_FOUND = "Фильм с указанным id не найден";
     public static final String INCORRECT_EMAIL = "Указан E-mail в некорректном формате";
     public static final String INCORRECT_LOGIN_CONTAINS_SPACES = "Login не может содержать пробелы";
     public static final String USER_CANNOT_BE_NULL = "Пользователь не может быть null";
@@ -21,4 +22,5 @@ public class ExceptionMessages {
     public static final String FILM_CANNOT_BE_NULL = "Фильм не может быть null";
     public static final String FILM_RELEASE_DATE_IS_BEFORE_MIN_DATE
             = "Дата выхода фильма не может быть ранее 28.12.1895";
+    public static final String USER_NOT_FOUND_IN_FRIEND_LIST = "Пользователь с указанным id не найден в списке друзей";
 }
