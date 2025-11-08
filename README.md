@@ -1,5 +1,3 @@
 # ER Diagram
 
-![ER Diagram](./ER-diagram.png)
-
-[📄 Скачать PDF-версию](./ER-diagram.pdf)
+[📄 Скачать PDF-версию ER-диаграммы](./ER-diagram.pdf)
