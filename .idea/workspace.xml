@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="ALL" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="ceb34c1c-5946-4995-bf7f-0f41fcbaeec4" name="Changes" comment="Доработал проект приложения Filmorate с учетом ФЗ 12-го спринта:&#10;&#10;- переработал логику приложения с учетом работы с базой данных H2, сохраняемой в файл&#10;- написал интеграционные тесты для проверки подключения к базе данных&#10;- внедрил новую бизнес-логику (добавление в друзья через запросы с подтверждением)&#10;- создал новые атрибуты фильмов (рейтинг и жанры), написал логику для новых атрибутов" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Enum" />
+        <option value="com.intellij.jpb.FlywayMigrationScript" />
+        <option value="Exception" />
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;Dmitry92111&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/Dmitry92111/Filmorate.git&quot;,
+    &quot;accountId&quot;: &quot;f0fb54bb-7be6-40ee-8196-cc9557939f57&quot;
+  }
+}</component>
+  <component name="HttpClientOnboardingState">{
+  &quot;isOnboardingCommentShown&quot;: true
+}</component>
+  <component name="KubernetesApiPersistence">{}</component>
+  <component name="KubernetesApiProvider">{
+  &quot;isMigrated&quot;: true
+}</component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 8
+}</component>
+  <component name="ProjectId" id="34jIj4FhKmhRfMge9PLJHtheyv7" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.FilmorateApplication.executor": "Run",
+    "Database Script.data.sql.executor": "Run",
+    "Database Script.schema.sql.executor": "Run",
+    "JUnit.DbFilmStorageIntegrationTest.executor": "Run",
+    "JUnit.DbUserStorageIntegrationTest.executor": "Run",
+    "JUnit.FriendshipIntegrationTest.executor": "Run",
+    "JUnit.FriendshipIntegrationTest.testFriendshipLifecycle.executor": "Run",
+    "JUnit.GenreStorageIntegrationTest.executor": "Run",
+    "JUnit.MpaStorageIntegrationTest.executor": "Run",
+    "JUnit.UserValidationTest.executor": "Run",
+    "JUnit.UserValidationTest.shouldFailWhenEmailIsBlank.executor": "Run",
+    "JUnit.UserValidationTest.shouldFailWhenLoginIsBlank.executor": "Run",
+    "JUnit.ValidationServiceTest.executor": "Run",
+    "JUnit.ValidationServiceTest.shouldThrowExceptionWhenUserIsNull.executor": "Run",
+    "JUnit.db in Filmorate.executor": "Run",
+    "JUnit.java in Filmorate.executor": "Run",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "Spring Boot.FilmorateApplication.executor": "Run",
+    "git-widget-placeholder": "add-database",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.build.tools.auto.reload": "ALL",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "RunConfigurationTargetLRU": [
+      "3fab7118-b7ea-4601-86e3-efcff67d629a",
+      "3fab7118-b7ea-4601-86e3-efcff67d629a/database/\"FILMORATE\"/schema/\"PUBLIC\""
+    ],
+    "com.intellij.ide.scratch.LRUPopupBuilder$1/": [
+      "H2"
+    ]
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="ru.yandex.practicum.filmorate.model" />
+    </key>
+  </component>
+  <component name="RunManager" selected="JUnit.java in Filmorate">
+    <configuration name="data.sql" type="DatabaseScript" editBeforeRun="true" nameIsGenerated="true">
+      <script-file value="$PROJECT_DIR$/src/main/resources/data.sql" />
+      <script-mode>FILE</script-mode>
+      <data-source id="3fab7118-b7ea-4601-86e3-efcff67d629a" />
+      <method v="2" />
+    </configuration>
+    <configuration name="schema.sql" type="DatabaseScript" editBeforeRun="true" nameIsGenerated="true">
+      <script-file value="$PROJECT_DIR$/src/main/resources/schema.sql" />
+      <script-mode>FILE</script-mode>
+      <data-source id="3fab7118-b7ea-4601-86e3-efcff67d629a" />
+      <method v="2" />
+    </configuration>
+    <configuration name="FriendshipIntegrationTest.testFriendshipLifecycle" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Filmorate" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ru.yandex.practicum.filmorate.storage.db.friendship.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="ru.yandex.practicum.filmorate.storage.db.friendship" />
+      <option name="MAIN_CLASS_NAME" value="ru.yandex.practicum.filmorate.storage.db.friendship.FriendshipIntegrationTest" />
+      <option name="METHOD_NAME" value="testFriendshipLifecycle" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserValidationTest.shouldFailWhenLoginIsBlank" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Filmorate" />
+      <option name="PACKAGE_NAME" value="ru.yandex.practicum.filmorate.model" />
+      <option name="MAIN_CLASS_NAME" value="ru.yandex.practicum.filmorate.model.UserValidationTest" />
+      <option name="METHOD_NAME" value="shouldFailWhenLoginIsBlank" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ValidationServiceTest.shouldThrowExceptionWhenUserIsNull" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Filmorate" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ru.yandex.practicum.filmorate.validation.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="ru.yandex.practicum.filmorate.validation" />
+      <option name="MAIN_CLASS_NAME" value="ru.yandex.practicum.filmorate.validation.ValidationServiceTest" />
+      <option name="METHOD_NAME" value="shouldThrowExceptionWhenUserIsNull" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="db in Filmorate" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Filmorate" />
+      <option name="TEST_OBJECT" value="directory" />
+      <dir value="$PROJECT_DIR$/src/test/java/ru/yandex/practicum/filmorate/storage/db" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="java in Filmorate" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Filmorate" />
+      <option name="TEST_OBJECT" value="directory" />
+      <dir value="$PROJECT_DIR$/src/test/java" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="FilmorateApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="Filmorate" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="ru.yandex.practicum.filmorate.FilmorateApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.java in Filmorate" />
+        <item itemvalue="JUnit.FriendshipIntegrationTest.testFriendshipLifecycle" />
+        <item itemvalue="JUnit.db in Filmorate" />
+        <item itemvalue="JUnit.ValidationServiceTest.shouldThrowExceptionWhenUserIsNull" />
+        <item itemvalue="JUnit.UserValidationTest.shouldFailWhenLoginIsBlank" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9823dce3aa75-bf35d07a577b-intellij.indexing.shared.core-IU-252.27397.103" />
+        <option value="bundled-js-predefined-d6986cc7102b-3aa1da707db6-JavaScript-IU-252.27397.103" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="ceb34c1c-5946-4995-bf7f-0f41fcbaeec4" name="Changes" comment="" />
+      <created>1761720687267</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1761720687267</updated>
+      <workItem from="1762503114234" duration="3480000" />
+      <workItem from="1762526212409" duration="8583000" />
+      <workItem from="1762534813472" duration="9087000" />
+      <workItem from="1762578625480" duration="20607000" />
+    </task>
+    <task id="LOCAL-00001" summary="Выполнил ФЗ 10-го спринта в соответствии с техническим заданием: создал каркас приложения Filmorate, в том числе:&#10;- модели (Film, User)&#10;- контроллеры и service классы (для указанных моделей)&#10;- правила валидации поступающих со стороны клиентов запросов&#10;- логирование через SLF4J&#10;- тесты, покрывающие процесс валидации">
+      <option name="closed" value="true" />
+      <created>1761745170968</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1761745170968</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Выполнил ФЗ 11-го спринта в соответствии с техническим заданием (Улучшил приложение Filmorate):&#10;- создал классы-хранилища, ответственные за хранение данных в оперативной памяти&#10;- добавил функции для userService (добавление в друзья, удаление из друзей, вывод списка общих друзей)&#10;- добавил функции для filmService (добавление лайка, удаление лайка, вывод 10 наиболее популярных фильмов)&#10;- добавил эндпоинты в контроллеры для новых функций&#10;- подключил дополнительную библиотеку для логирования">
+      <option name="closed" value="true" />
+      <created>1762321485399</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1762321485399</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Доработал ФЗ 11-го спринта с учетом комментариев:&#10;- убрал дублирующиеся строки &quot;/films&quot; и &quot;/users&quot; на пути к эндпоинтам в контроллерах&#10;- поменял зависимости FilmService и UserService (теперь зависят от интерфейсов хранилищ, а не от конкретных реализаций)&#10;- поменял аннотацию валидирования даты рождения в классе User (теперь в качестве даты рождения может быть указана текущая дата (в соответствии с ТЗ))&#10;- убрал аннотацию валидации (@Past) поля releaseDate в классе Film, теперь есть возможность добавить фильм, еще не вышедший в прокат (Не нарушает ТЗ)">
+      <option name="closed" value="true" />
+      <created>1762364063706</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1762364063706</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Доработал проект приложения Filmorate с учетом ФЗ 12-го спринта:&#10;&#10;- переработал логику приложения с учетом работы с базой данных H2, сохраняемой в файл&#10;- написал интеграционные тесты для проверки подключения к базе данных&#10;- внедрил новую бизнес-логику (добавление в друзья через запросы с подтверждением)&#10;- создал новые атрибуты фильмов (рейтинг и жанры), написал логику для новых атрибутов">
+      <option name="closed" value="true" />
+      <created>1762598926226</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1762598926227</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Выполнил ФЗ 10-го спринта в соответствии с техническим заданием: создал каркас приложения Filmorate, в том числе:&#10;- модели (Film, User)&#10;- контроллеры и service классы (для указанных моделей)&#10;- правила валидации поступающих со стороны клиентов запросов&#10;- логирование через SLF4J&#10;- тесты, покрывающие процесс валидации" />
+    <MESSAGE value="Выполнил ФЗ 11-го спринта в соответствии с техническим заданием (Улучшил приложение Filmorate):&#10;- создал классы-хранилища, ответственные за хранение данных в оперативной памяти&#10;- добавил функции для userService (добавление в друзья, удаление из друзей, вывод списка общих друзей)&#10;- добавил функции для filmService (добавление лайка, удаление лайка, вывод 10 наиболее популярных фильмов)&#10;- добавил эндпоинты в контроллеры для новых функций&#10;- подключил дополнительную библиотеку для логирования" />
+    <MESSAGE value="Доработал ФЗ 11-го спринта с учетом комментариев:&#10;- убрал дублирующиеся строки &quot;/films&quot; и &quot;/users&quot; на пути к эндпоинтам в контроллерах&#10;- поменял зависимости FilmService и UserService (теперь зависят от интерфейсов хранилищ, а не от конкретных реализаций)&#10;- поменял аннотацию валидирования даты рождения в классе User (теперь в качестве даты рождения может быть указана текущая дата (в соответствии с ТЗ))&#10;- убрал аннотацию валидации (@Past) поля releaseDate в классе Film, теперь есть возможность добавить фильм, еще не вышедший в прокат (Не нарушает ТЗ)" />
+    <MESSAGE value="Доработал проект приложения Filmorate с учетом ФЗ 12-го спринта:&#10;&#10;- переработал логику приложения с учетом работы с базой данных H2, сохраняемой в файл&#10;- написал интеграционные тесты для проверки подключения к базе данных&#10;- внедрил новую бизнес-логику (добавление в друзья через запросы с подтверждением)&#10;- создал новые атрибуты фильмов (рейтинг и жанры), написал логику для новых атрибутов" />
+    <option name="LAST_COMMIT_MESSAGE" value="Доработал проект приложения Filmorate с учетом ФЗ 12-го спринта:&#10;&#10;- переработал логику приложения с учетом работы с базой данных H2, сохраняемой в файл&#10;- написал интеграционные тесты для проверки подключения к базе данных&#10;- внедрил новую бизнес-логику (добавление в друзья через запросы с подтверждением)&#10;- создал новые атрибуты фильмов (рейтинг и жанры), написал логику для новых атрибутов" />
+  </component>
+</project>
