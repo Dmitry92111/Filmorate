@@ -5,7 +5,7 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 
 import java.time.LocalDate;
-import java.util.HashSet;
+import java.util.*;
 
 import static ru.yandex.practicum.filmorate.messages.ExceptionMessages.*;
 
@@ -25,7 +25,9 @@ public class Film {
     @Positive(message = FILM_DURATION_CANNOT_BE_NEGATIVE_NUMBER)
     private Long duration;
 
-    private final HashSet<Long> likedUsersIds;
+    private Set<Long> likedUsersIds;
+    private List<Genre> genres;
+    private Mpa mpa;
 
     public Film(String name, String description, LocalDate releaseDate, long duration) {
         this.name = name;
@@ -33,5 +35,6 @@ public class Film {
         this.releaseDate = releaseDate;
         this.duration = duration;
         likedUsersIds = new HashSet<>();
+        genres = new ArrayList<>();
     }
 }

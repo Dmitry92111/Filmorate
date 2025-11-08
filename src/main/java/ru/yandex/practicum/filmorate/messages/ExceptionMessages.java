@@ -21,5 +21,10 @@ public class ExceptionMessages {
     public static final String FILM_CANNOT_BE_NULL = "Фильм не может быть null";
     public static final String FILM_RELEASE_DATE_IS_BEFORE_MIN_DATE
             = "Дата выхода фильма не может быть ранее 28.12.1895";
-    public static final String USER_NOT_FOUND_IN_FRIEND_LIST = "Пользователь с указанным id не найден в списке друзей";
+    public static final String FILM_NOT_FOUND_IN_DATABASE = "Фильм не найден в базе данных";
+    public static final String GENRE_BY_ID_NOT_FOUND = "Жанр с указанным id не найден";
+    public static final String MPA_BY_ID_NOT_FOUND = "Рейтинг с указанным id не найден";
+    public static final String GENERATED_USER_ID_NOT_FOUND = "Не найден сгенерированный ID пользователя";
+    public static final String GENERATED_FILM_ID_NOT_FOUND = "Не найден сгенерированный ID фильма";
+
 }

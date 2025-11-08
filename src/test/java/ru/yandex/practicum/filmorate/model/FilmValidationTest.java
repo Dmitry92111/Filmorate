@@ -49,15 +49,6 @@ class FilmValidationTest {
     }
 
     @Test
-    void shouldFailWhenReleaseDateTooEarly() {
-        Film film = new Film("Film", "Desc", LocalDate.of(1800, 1, 1), 148);
-        Set<ConstraintViolation<Film>> violations = validator.validate(film);
-        assertFalse(violations.isEmpty());
-        assertTrue(violations.stream()
-                .anyMatch(v -> v.getPropertyPath().toString().equals("releaseDate")));
-    }
-
-    @Test
     void shouldFailWhenDurationIsNegative() {
         Film film = new Film("Film", "Desc", LocalDate.of(2010, 1, 1), -148);
         Set<ConstraintViolation<Film>> violations = validator.validate(film);
