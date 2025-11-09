@@ -193,32 +193,4 @@ public class FilmService {
     private void loadGenresLikesAndRating(Film film) {
         filmStorage.loadGenresLikesAndRating(film);
     }
-
-    /*public void addRandomLikes() {
-        Random random = new Random();
-        List<Long> userIds = jdbcTemplate.queryForList("SELECT user_id FROM users", Long.class);
-        List<Long> filmIds = jdbcTemplate.queryForList("SELECT film_id FROM films", Long.class);
-
-        for (Long filmId : filmIds) {
-            Collections.shuffle(userIds, random);
-            int likesCount = 1 + random.nextInt(5); // 1–5 лайков
-            List<Long> likedUsers = userIds.subList(0, Math.min(likesCount, userIds.size()));
-
-            for (Long userId : likedUsers) {
-                // проверяем, есть ли уже лайк от этого пользователя
-                Integer existing = jdbcTemplate.queryForObject(
-                        "SELECT COUNT(*) FROM film_likes WHERE film_id = ? AND user_id = ?",
-                        Integer.class,
-                        filmId, userId
-                );
-
-                if (existing == null || existing == 0) {
-                    jdbcTemplate.update(
-                            "INSERT INTO film_likes(film_id, user_id) VALUES (?, ?)",
-                            filmId, userId
-                    );
-                }
-            }
-        }
-    }*/
 }
