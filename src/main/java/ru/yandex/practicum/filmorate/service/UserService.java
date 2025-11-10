@@ -1,14 +1,19 @@
 package ru.yandex.practicum.filmorate.service;
 
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 import ru.yandex.practicum.filmorate.exception.ConditionsNotMetException;
 import ru.yandex.practicum.filmorate.exception.DuplicatedDataException;
 import ru.yandex.practicum.filmorate.exception.NotFoundException;
+import ru.yandex.practicum.filmorate.model.Friendship;
+import ru.yandex.practicum.filmorate.model.FriendshipStatus;
 import ru.yandex.practicum.filmorate.model.User;
+import ru.yandex.practicum.filmorate.storage.friendship.FriendshipStorage;
 import ru.yandex.practicum.filmorate.storage.user.UserStorage;
 
 import java.util.*;
+import java.util.stream.Collectors;
 
 import static ru.yandex.practicum.filmorate.messages.ExceptionMessages.*;
 import static ru.yandex.practicum.filmorate.messages.ExceptionMessages.EMAIL_ALREADY_EXIST;
@@ -17,9 +22,12 @@ import static ru.yandex.practicum.filmorate.messages.ExceptionMessages.EMAIL_ALR
 @Service
 public class UserService {
     UserStorage userStorage;
+    FriendshipStorage friendshipStorage;
 
-    public UserService(UserStorage userStorage) {
+    public UserService(@Qualifier("DbUserStorage") UserStorage userStorage,
+                       FriendshipStorage friendshipStorage) {
         this.userStorage = userStorage;
+        this.friendshipStorage = friendshipStorage;
     }
 
     public User addUser(User user) {
@@ -72,43 +80,83 @@ public class UserService {
     }
 
 
-    public void addFriend(Long userId, Long friendId) {
-        log.info("Trying to make users friends: {} & {}", userId, friendId);
+    public Friendship sendFriendRequest(Long userId, Long friendId) {
+        log.info("User {} is sending a friend request to {}", userId, friendId);
+
         User user = findById(userId);
         User friend = findById(friendId);
 
-        user.getFriendsIds().add(friendId);
-        friend.getFriendsIds().add(userId);
-        log.info("users {} and {} have successfully become friends", userId, friendId);
+        boolean alreadySent = friendshipStorage.exists(user.getId(), friend.getId());
+        if (alreadySent) {
+            log.warn("Friend request already exists from {} to {}", userId, friendId);
+            return friendshipStorage.find(userId, friendId)
+                    .orElse(new Friendship(userId, friendId, FriendshipStatus.UNCONFIRMED));
+        }
+
+        Friendship friendship = new Friendship(userId, friendId, FriendshipStatus.UNCONFIRMED);
+        friendshipStorage.add(friendship);
+
+        log.info("Friend request sent from {} to {}", userId, friendId);
+        return friendship;
+    }
+
+    public void confirmFriendRequest(Long userId, Long requesterId) {
+        log.info("User {} is confirming friendship with {}", userId, requesterId);
+
+        Optional<Friendship> existingRequest = friendshipStorage.find(requesterId, userId);
+
+        if (existingRequest.isPresent()) {
+            Friendship friendship = existingRequest.get();
+            friendship.setStatus(FriendshipStatus.CONFIRMED);
+            friendshipStorage.update(friendship);
+            log.info("Friendship between {} and {} confirmed", requesterId, userId);
+        } else {
+            friendshipStorage.add(new Friendship(userId, requesterId, FriendshipStatus.UNCONFIRMED));
+            log.info("No existing request from {}, created new unconfirmed friendship", requesterId);
+        }
     }
 
     public void removeFromFriends(Long userId, Long friendId) {
-        log.info("Trying to remove user {} from friend-list of user {}", friendId, userId);
+        log.info("Trying to remove friendship between users {} and {}", userId, friendId);
         User user = findById(userId);
-        if (!user.getFriendsIds().contains(friendId)) {
-            log.error("User with id {} don't have a friend with id {}", userId, friendId);
-            throw new ConditionsNotMetException(USER_NOT_FOUND_IN_FRIEND_LIST);
-        }
         User friend = findById(friendId);
-        user.getFriendsIds().remove(friendId);
-        friend.getFriendsIds().remove(userId);
-        log.info("users {} and {} have successfully stopped being friends", userId, friendId);
+
+        friendshipStorage.remove(user.getId(), friend.getId());
+
+        log.info("Users {} and {} are not friends", userId, friendId);
     }
 
     public Collection<User> getListOfFriends(Long userId) {
         User user = findById(userId);
-        return user.getFriendsIds().stream().map(this::findById).toList();
+        return friendshipStorage.findAllFriends(user.getId()).stream()
+                .map(f -> findById(f.getFriendId()))
+                .toList();
     }
 
     public Collection<User> getListOfCommonFriends(Long userId, Long anotherUserId) {
         log.info("Trying to get list of common friends of users {} and {}", userId, anotherUserId);
-        User user = findById(userId);
-        User anotherUser = findById(anotherUserId);
 
-        List<User> commonFriends = user.getFriendsIds().stream()
-                .filter(anotherUser.getFriendsIds()::contains).map(this::findById).toList();
+        Set<Long> userFriends = friendshipStorage.findAllFriends(userId).stream()
+                .map(Friendship::getFriendId)
+                .collect(Collectors.toSet());
+
+        Set<Long> anotherUserFriends = friendshipStorage.findAllFriends(anotherUserId).stream()
+                .map(Friendship::getFriendId)
+                .collect(Collectors.toSet());
+
+        Collection<User> commonFriends = userFriends.stream()
+                .filter(anotherUserFriends::contains)
+                .map(this::findById)
+                .toList();
         log.info("Common friends of users {} and {} have been found", userId, anotherUserId);
         return commonFriends;
+    }
+
+    public void deleteUserById(Long userId) {
+        log.info("Trying to delete user with id={}", userId);
+        User user = findById(userId);
+        userStorage.deleteById(user.getId());
+        log.info("User with id={} has been deleted", userId);
     }
 
     private void checkUniqueLoginAndEmail(User user) {

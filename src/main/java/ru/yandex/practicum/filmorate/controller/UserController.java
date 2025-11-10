@@ -2,6 +2,7 @@ package ru.yandex.practicum.filmorate.controller;
 
 import jakarta.validation.Valid;
 import org.springframework.web.bind.annotation.*;
+import ru.yandex.practicum.filmorate.model.Friendship;
 import ru.yandex.practicum.filmorate.model.User;
 import ru.yandex.practicum.filmorate.service.UserService;
 import ru.yandex.practicum.filmorate.validation.ValidationService;
@@ -36,7 +37,7 @@ public class UserController {
         return userService.getListOfFriends(id);
     }
 
-    @GetMapping("/{id}/friends/common/{otherId}")
+    @GetMapping("/{id}/friends/common/{anotherId}")
     public Collection<User> getListOfCommonFriends(@PathVariable long id,
                                                    @PathVariable long anotherId) {
         return userService.getListOfCommonFriends(id, anotherId);
@@ -54,11 +55,21 @@ public class UserController {
         return userService.updateUser(user);
     }
 
-    @PutMapping("/{id}/friends/{friendId}")
-    public void addFriend(@PathVariable long id,
-                          @PathVariable long friendId) {
-        userService.addFriend(id, friendId);
+    @DeleteMapping("{userId}")
+    public void deleteById(@PathVariable long userId) {
+        userService.deleteUserById(userId);
     }
+
+    @PutMapping("/{id}/friends/{friendId}")
+    public Friendship sendFriendRequest(@PathVariable long id, @PathVariable long friendId) {
+        return userService.sendFriendRequest(id, friendId);
+    }
+
+    @PutMapping("/{id}/friends/confirm/{requesterId}")
+    public void confirmFriendRequest(@PathVariable long id, @PathVariable long requesterId) {
+        userService.confirmFriendRequest(id, requesterId);
+    }
+
 
     @DeleteMapping("/{id}/friends/{friendId}")
     public void deleteFriend(@PathVariable long id,

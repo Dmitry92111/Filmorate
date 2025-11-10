@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.Past;
 import jakarta.validation.constraints.PastOrPresent;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -32,7 +31,7 @@ public class User {
     @PastOrPresent(message = USER_BIRTHDAY_IS_IN_THE_FUTURE)
     private LocalDate birthday;
 
-    private final Set<Long> friendsIds;
+    private final Set<Friendship> friendships;
 
     @JsonCreator
     public User(
@@ -45,6 +44,6 @@ public class User {
         this.email = email;
         this.name = name;
         this.birthday = birthday;
-        friendsIds = new HashSet<>();
+        friendships = new HashSet<>();
     }
 }
